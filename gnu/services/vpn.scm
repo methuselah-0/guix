@@ -2,6 +2,7 @@
 ;;; Copyright © 2017 Julien Lepiller <julien@lepiller.eu>
 ;;; Copyright © 2017 Clément Lassieur <clement@lassieur.org>
 ;;; Copyright © 2017 Mathieu Othacehe <m.othacehe@gmail.com>
+;;; Copyright © 2020 David Larsson <david.larsson@selfhosted.xyz>
 ;;;
 ;;; This file is part of GNU Guix.
 ;;;
@@ -277,12 +278,12 @@ servers.")
     "The certificate authority to check connections against.")
 
    (cert
-    (string "/etc/openvpn/client.crt")
+    (maybe-string "/etc/openvpn/client.crt")
     "The certificate of the machine the daemon is running on. It should be signed
 by the authority given in @code{ca}.")
 
    (key
-    (string "/etc/openvpn/client.key")
+    (maybe-string "/etc/openvpn/client.key")
     "The key of the machine the daemon is running on. It must be the key whose
 certificate is @code{cert}.")
 
